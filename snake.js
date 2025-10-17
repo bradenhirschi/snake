@@ -242,6 +242,10 @@ function gridString() {
       | bitAt(x + 1, 2) << 5
       | bitAt(x, 3) << 6
       | bitAt(x + 1, 3) << 7;
+
+    // flip all 8 bits (invert full ↔ empty)
+    n = 0xFF ^ n;
+
     str += String.fromCharCode(0x2800 + n);
   }
   return str;
